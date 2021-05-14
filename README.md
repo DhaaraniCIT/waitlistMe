@@ -43,14 +43,19 @@ Angular - frontend
 
 1. Navigate to the folder location of the py file - folder\path> - then run the following commands
 
-	1. npm install
-	2. ng serve - to run the app
+2. Installation
+ 
+ 	1. npm install
+	
+3. Run the app
+
+	1. ng serve
 
 Python - backend
 
 1. Navigate to the folder location of the py file - folder\path> - then run the following commands
 
-	installations
+2. installations
 
 	1. python --version
 		pip --version
@@ -61,7 +66,7 @@ Python - backend
 	5. pip install captcha
 	6. pip install MySQL-python or pip install MySQL-python-connector
 
-	Run the file
+3. Run the file
 
 	1. python <YourfileName.py>
 
@@ -69,11 +74,13 @@ Node JS - backend for sending mail
 
 1. Navigate to the folder location of the py file - folder\path> - then run the following commands
 
-	installation
+2. installation
 	
 	1. install npm
 	2. npm install express --save
+	3. npm i cors
+	4. npm install nodemailer
 
-	Run the file
+3. Run the file
 
 	1. node index.js
