@@ -31,8 +31,8 @@ api.post('/email', (req , res) => {
        ciphers:'SSLv3'
     },
     auth: {
-        user: 'YOURMAIL@OUTLOOK.COM',
-        pass: 'PASSWORD'
+        user: 'YOURMAIL@OUTLOOK.COM', //Give your mail here
+        pass: 'PASSWORD' //give your account password
     }
 });
     
