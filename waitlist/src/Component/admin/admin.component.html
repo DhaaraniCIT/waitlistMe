@@ -136,11 +136,19 @@
             <h4 class="text blue-text heading text-center">Deletion is unsuccessful</h4>
             <div rounded class="text-center">
               <p>Try again</p>
+              <div>
+                <!-- <button class="btn btn-dark" data-dismiss="modal" (click)="errisSend=false">OK</button> -->
+              </div>
             </div>
           </div>
           <div *ngIf="isSend" >
             <div align = "center"><img src = '../../assets/select.png' width="100" height="80" alt=""/></div>
             <h4 class="text blue-text heading text-center">Deletion is successful</h4>
+            <div class="text-center">
+              <div>
+                <!-- <button class="btn btn-dark" data-dismiss="modal" (click)="isSend=false">OK</button> -->
+              </div>
+            </div>
           </div>
         </div>
       </div>
