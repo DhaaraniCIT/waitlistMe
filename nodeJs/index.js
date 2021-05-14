@@ -31,8 +31,8 @@ api.post('/email', (req , res) => {
        ciphers:'SSLv3'
     },
     auth: {
-        user: 'dhaarani1211@outlook.com',
-        pass: 'Deikv@123'
+        user: 'YOURMAIL@OUTLOOK.COM',
+        pass: 'PASSWORD'
     }
 });
     
