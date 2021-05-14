@@ -279,12 +279,12 @@ ul li a:hover,.navbar-default ul li a:active{
   .testimonials{
       margin-top: 70px;
   }
-@media (min-width: 771px) {
+@media (min-width: 1025px) {
     .mobile{
         display: none;
     }
 }
-@media (min-width: 300px) and (max-width: 770px){
+@media (min-width: 300px) and (max-width: 1024px){
     .test-section .cotainer{
         padding: 0px 0px;
     }
