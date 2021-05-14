@@ -42,9 +42,13 @@ Project instructions
 Angular - frontend
 
 1. Navigate to the folder location of the py file - folder\path> - then run the following commands
-2. Installation
- 	1. npm install
-3. Run the app
+
+3. Installation
+
+	1. npm install
+
+4. Run the app
+
 	1. ng serve
 
 Python - backend
