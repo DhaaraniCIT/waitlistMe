@@ -84,3 +84,14 @@ Node JS - backend for sending mail
 3. Run the file
 
 	1. node index.js
+
+Run all the 3 file in separate terminals
+
+After running all the files
+
+Go to browser and type 'http://localhost:4200'
+
+Links
+	1. http://localhost:4200 - frontend
+	2. http://127.0.0.1:5000 - backend
+	3. http://localhost:3100 - backend for mail
