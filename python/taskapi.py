@@ -45,7 +45,7 @@ def login():
     cur.execute(sql)
     account = cur.fetchone()
     conn.close()
-    print(account)
+#     print(account)
     if account:
         keys=('userId','inital','position','name','email','userUrl','token','profilePicture')
         account=list(account)
@@ -60,13 +60,13 @@ def login():
 @app.route('/signup', methods =['POST'])
 def signup():
     content = request.get_json()
-    print(request.get_json(),content['email'])
+#     print(request.get_json(),content['email'])
     conn = MySQLdb.connect(hostname,username,password,database)
     cur = conn.cursor()
     sql = 'SELECT * FROM waitlist WHERE email= "'+content['email']+'"'        
     cur.execute(sql)
     account = cur.fetchone()
-    print(account)
+#     print(account)
     if account:
         return jsonify({"error":"User Already Exist with this email"})
     else:
@@ -97,7 +97,7 @@ def signup():
             else:
                 position = 1+lastid[0]             
             sql = "INSERT INTO waitlist (name, email, password,APIkey,referalUrl,profilePic,position,referalId,initialPos) VALUES ('" + content['name'] + "','" + content['email'] + "','" + hashpassword.hexdigest() + "','"+key+"','"+url+"',"+str(pic)+","+str(position)+","+str(0)+","+str(position)+")"
-            print(sql)
+#             print(sql)
             cur = conn.cursor()
             cur.execute(sql)
             conn.commit()
@@ -119,23 +119,23 @@ def signup():
 @app.route('/refer', methods =['POST'])
 def refersignup():
     content = request.get_json()
-    print(request.get_json(),content['email'])
+#     print(request.get_json(),content['email'])
     conn = MySQLdb.connect(hostname,username,password,database)
     cur = conn.cursor()
     sql = 'SELECT * FROM waitlist WHERE email= "'+content['email']+'"'        
     cur.execute(sql)
     account = cur.fetchone()
-    print(account)
+#     print(account)
     if account:
         return jsonify({"error":"User Already Exist"})
     else:
         if content['recaptcha']==content['captcha']:
             cur = conn.cursor()
             sql = "SELECT position,id,initialPos,email FROM waitlist WHERE referalURL = '"+content['referalUrl']+"'"
-            print(sql)        
+#             print(sql)        
             cur.execute(sql)
             currentPositionS = cur.fetchone()
-            print(currentPositionS)
+#             print(currentPositionS)
             if currentPositionS[0] == 1 :
                 currentPosition = currentPositionS[2]-1
             else:
@@ -167,7 +167,7 @@ def refersignup():
             lastid = cur.fetchone()
             position = 1+lastid[0]            
             sql = "INSERT INTO waitlist (name, email, password,APIkey,referalUrl,profilePic,position,referalId,initialPos) VALUES ('" + content['name'] + "','" + content['email'] + "','" + hashpassword.hexdigest() + "','"+key+"','"+url+"',"+str(pic)+","+str(position)+","+str(currentPositionS[1])+","+str(position)+")"
-            print(sql)
+#             print(sql)
             cur.execute(sql)
             conn.commit()
             cur = conn.cursor()
@@ -198,7 +198,7 @@ def viewall():
     cur = conn.cursor()
     cur.execute( "SELECT * FROM waitlist" )
     result = cur.fetchall()
-    print(result)
+#     print(result)
     length = len(result)
     if length >=0 :
         arr=[]
@@ -235,7 +235,7 @@ def viewbyId(id):
     cur.execute(sql)
     account = cur.fetchone()
     conn.close()
-    print(account)
+#     print(account)
     if account:
         keys=('userId','inital','position','name','email','userUrl','token','profilePicture')
         account=list(account)
