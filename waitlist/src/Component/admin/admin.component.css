@@ -16,8 +16,11 @@ a{
   transition:500ms ease;
   background:#b17cc6;
 }
-.navbar-default.scrolled{
+.navbar-default.scrolled,.progress-bar,.badge{
   background:#b17cc6;
+}
+.badge{
+    font-size: 13px;
 }
 .content{
     padding-top: 100px;
