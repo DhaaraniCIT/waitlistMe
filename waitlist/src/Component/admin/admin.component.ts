@@ -28,6 +28,7 @@ export class AdminComponent implements OnInit {
   user=[];
   deleteId: any;
   deleteuser: any;
+  per: number;
 
   constructor(private formBuilder:FormBuilder,private router:Router,private apiservice:AdminService) { }
 
@@ -141,6 +142,13 @@ export class AdminComponent implements OnInit {
   backtoAdmin(){
     this.viewId = false
     this.adminscreen=true
+  }
+
+  bindcamp(intial,current,id){
+    let total = 98 + id
+    this.per = (intial-current)/total
+    this.per = this.per*100
+    return this.per+'%'
   }
 
   //logout
