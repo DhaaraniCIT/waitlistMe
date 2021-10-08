@@ -64,7 +64,7 @@ Python - backend
 	3. pip install flask
 	4. pip install Flask-Cors
 	5. pip install captcha
-	6. pip install MySQL-python or pip install MySQL-python-connector
+	6. pip install MySQL-python or pip install MySQL-python-connector or python -m pip install mysql-connector-python
 
 3. Run the file
 
