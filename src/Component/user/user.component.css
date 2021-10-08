@@ -1,0 +1,43 @@
+.navbar-default ul li a:active,.navbar-default ul li a:hover{
+    color: white;
+    text-decoration: underline;
+}
+
+a{
+    color: white;
+}
+.navbar-color {
+    background-color:white;
+    width: 100% !important;
+    margin: 0px;
+    padding: 0px;
+    color: black;
+}
+  .navbar-default{
+  transition:500ms ease;
+  background:#b17cc6;
+}
+.navbar-default.scrolled,.card,.progress-bar{
+  background:#b17cc6;
+}
+.content{
+    padding-top: 100px;
+}
+.material-icons{
+    cursor: pointer;
+}
+.left-border{
+    border-right: 2px solid white;
+}
+ol li{
+    font-size: 20px;
+}
+@media only screen and (max-width : 578px){
+    .left-border{
+        border-bottom: 2px solid white;
+        border-right: none;
+    }
+    .col-sm-3{
+        padding-top: 20px;
+    }
+}

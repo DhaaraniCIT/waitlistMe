@@ -1,0 +1,228 @@
+<div>
+  <div class="topNav">
+    <nav class="navbar navbar-expand-lg fixed-top navbar-default mb-4">
+      <div class="container">
+        <a class="navbar-brand" href="/">
+          <img src="../../assets/download.png" alt="Logo" style="width:50px;margin-right: 10px;">WAITLIST ME
+        </a>
+        <ul class="nav navbar-nav" id="desktop">
+          <li class="nav-item">
+            <a class="nav-link" href="" (click)="logOut()">LogOut</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+  <br>
+  <!-- <div class="content" *ngIf="adminscreen">
+    <div class="row ml-0 mr-0 d-flex justify-content-center" *ngIf="!isloaded">
+      <div style="text-align: center;">
+        <div class="spinner-border text-primary"></div>
+        <p class="text-center">Please wait while loading</p>
+      </div>
+    </div>
+    <div class="container-fluid" *ngIf="isloaded">
+      <div class="row ml-0 mr-0 d-flex justify-content-center">
+        <div>
+          <img src="../../assets/avarters/1.PNG" alt="" srcset="">
+          <h3 class="text-center">Admin</h3>
+        </div>
+      </div>
+      <h2>User Lists</h2>
+      <div class="row ml-0 mr-0" *ngIf="isPresent && !failure">
+        <div class="table-responsive">
+          <table class="table table-striped">
+            <thead class="thead-dark">
+              <tr>
+                <th>#</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Refered By</th>
+                <th>Initial Pos</th>
+                <th>Current Pos</th>
+                <th></th>
+                <th></th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor = "let cus of user ; let i=index">
+                <td>{{i+1}}</td>
+                <td>{{cus.name}}</td>
+                <td>{{cus.email}}</td>
+                <td>{{cus.referalId}}</td>
+                <td>{{cus.inital}}</td>
+                <td>{{cus.position}}</td>
+                <td>
+                  <span class="material-icons" (click)="viewById(cus.userId)">
+                    visibility
+                  </span>
+                </td>
+                <td>
+                  <span class="material-icons" data-toggle="modal" data-target="#edit" (click)="edit(cus)">
+                    edit
+                  </span>    
+                </td>
+                <td>
+                  <span class="material-icons" data-toggle="modal" data-target="#delete" (click)="delete(cus)">
+                    delete
+                  </span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="row ml-0 mr-0" *ngIf="!isPresent && !failure">
+        <h4>No User Available</h4>
+      </div>
+      <div class="row ml-0 mr-0" *ngIf="!isPresent && failure">
+        <h4>{{errmsg}}</h4>
+      </div>
+    </div>
+  </div> -->
+  <div class="content" *ngIf="adminscreen">
+    <div class="row ml-0 mr-0 d-flex justify-content-center" *ngIf="!isloaded">
+      <div style="text-align: center;">
+        <div class="spinner-border text-primary"></div>
+        <p class="text-center">Please wait while loading</p>
+      </div>
+    </div>
+    <div class="container-fluid" *ngIf="isloaded">
+      <div class="row ml-0 mr-0 d-flex justify-content-center">
+        <div>
+          <img src="../../assets/avarters/1.PNG" alt="" srcset="">
+          <h3 class="text-center">Admin</h3>
+        </div>
+      </div>
+      <h2>User Lists</h2>
+      <div class="row ml-0 mr-0" *ngIf="isPresent && !failure">
+        <div *ngFor="let cus of user; let i = index;" style="padding-left: 10px;" class="col-sm-3 col-md-6 col-lg-3 mb-4 d-flex align-items-stretch">
+          <div class="card flex-fill hover-card">
+            <div class="card-img-container" style="cursor:pointer">
+              <img class="card-img-top p-5" width="100" height="350" src="{{'../../../assets/avarters/'+cus.profilePictureURL+'.PNG'}}">
+            </div>
+            <div class="card-body shadow">
+              <h5 style="line-height:2"
+                  class="card-title font-weight-bold text-truncate" style="cursor: pointer;" title="{{cus.name}}">
+                  {{cus.name}}
+                  <span class="badge badge-pill float-right badge text-white">@ {{cus.position}}<sup>th</sup> Position</span>
+              </h5>
+              <h6 style="line-height:2"
+                  class="font-weight-light text-truncate" style="cursor: pointer;" title="{{cus.email}}">
+                  {{cus.email}}
+              </h6>
+
+              <div class="card-text mt-4" style="line-height: 2" data-toggle="tooltip" style="cursor: pointer;" data-placement="right" title="{{cus.userUrl}}">
+                {{cus.userUrl}}
+              </div><br />
+
+              <div class="card-text mt-4" style="line-height: 2" data-toggle="tooltip" style="cursor: pointer;" data-placement="right" title="{{cus.referalId}}">
+                Refered By {{cus.referalId}}
+              </div><br />
+
+              <div class="my-1 progress" style="line-height:2; height:1em !important">
+                <div class="progress-bar"
+                             [ngStyle]="{'width': bindcamp(cus.inital,cus.position,cus.userId)}">
+                </div>
+              </div>
+
+              <div style="font-size:0.8em" class="d-flex justify-content-between pb-4">
+                <div>
+                  <span>{{cus.inital - cus.position}} of {{cus.inital}}</span>
+                </div>
+                <div>
+                  <span class="float-right">{{per > 100 ? 0 : 100 - per | number : '.2-2'}}% remaining</span>
+                </div>
+              </div>
+              <div class="float-right">
+                <span class="material-icons mr-3" title="View" (click)="viewById(cus.userId)">
+                  visibility
+                </span>
+                <span class="material-icons mr-3" title="edit" data-toggle="modal" data-target="#edit" (click)="edit(cus)">
+                  edit
+                </span>  
+                <span class="material-icons mr-3" title="delete" data-toggle="modal" data-target="#delete" (click)="delete(cus)">
+                  delete
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="viewId && !adminscreen">
+    <button class="btn btn-dark float-right mt-5" (click)="backtoAdmin()">Back</button>
+    <app-user></app-user>
+  </div>
+  <div class="modal fade" id="edit">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Edit</h4>
+          <button type="button" class="close" data-dismiss="modal" (click)="edited=false">&times;</button>
+        </div>
+        <div class="modal-body">
+          <div *ngIf="!edited">
+            <form  [formGroup]= "editForm" >
+              <div class="form-group">
+                <label for="">Email</label>
+                <input type="email"  class="form-control" formControlName="email" [ngClass]="{ 'is-invalid':editForm.get('email').touched && editForm.get('email').invalid}" placeholder="Email"  />
+                <div *ngIf="f.email.errors" class="invalid-feedback">
+                  <div *ngIf="f.email.errors.required">Email is required</div>
+                  <div *ngIf="f.email.errors.pattern">Enter a valid Email address</div>
+                </div>
+              </div>                
+            </form>
+          </div>
+          <div *ngIf="edited">
+            <h2 class="text-center">{{msg}}</h2>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" *ngIf="!edited" [disabled] = "!editForm.valid" (click)="edituser();clicked=true"  class="btn btn-dark" >Update<span *ngIf="clicked" class="spinner-border text-light ml-1" style="width: 20px;height: 20px;"></span></button>
+        </div>  
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="delete">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Delete User</h4>
+          <button type="button" class="close" data-dismiss="modal" (click)="isSend=false;errisSend=false">&times;</button>
+        </div>
+        <div class="modal-body">
+          <div *ngIf="!errisSend && !isSend" class="text-center mb-3">
+            <h4 class="mb-3">Are you sure, you want to delete <b>{{deleteuser}}</b> from <b>Waitlist Me</b> permanently?</h4>
+            <div class="text-center">
+              <div>
+                <button class="btn btn-dark mr-3" (click)="conformDelete()">Yes</button>
+                <button class="btn btn-dark" data-dismiss="modal">No</button>
+              </div>
+            </div>
+          </div>
+          <div *ngIf="errisSend" >
+            <h4 class="text blue-text heading text-center">Deletion is unsuccessful</h4>
+            <div rounded class="text-center">
+              <p>Try again</p>
+              <div>
+                <!-- <button class="btn btn-dark" data-dismiss="modal" (click)="errisSend=false">OK</button> -->
+              </div>
+            </div>
+          </div>
+          <div *ngIf="isSend" >
+            <div align = "center"><img src = '../../assets/select.png' width="100" height="80" alt=""/></div>
+            <h4 class="text blue-text heading text-center">Deletion is successful</h4>
+            <div class="text-center">
+              <div>
+                <!-- <button class="btn btn-dark" data-dismiss="modal" (click)="isSend=false">OK</button> -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

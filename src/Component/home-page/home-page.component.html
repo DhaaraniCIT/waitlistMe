@@ -1,0 +1,346 @@
+<div id="root">
+    <div class="first-section" id="Home">
+        <div class="topNav">
+            <nav class="navbar navbar-expand-lg fixed-top navbar-default mb-4">
+                <div class="container">
+                    <a class="navbar-brand" href="/">
+                        <img src="../../assets/download.png" alt="Logo" style="width:50px;margin-right: 10px;">WAITLIST ME
+                    </a>
+                    <span class="material-icons text-white mobile" data-toggle="collapse" data-target="#myNavbar">
+                        dehaze
+                    </span>
+                    <ul class="nav navbar-nav" id="desktop">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#About">About Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#Blog">Blog</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#Contact">Contact Us</a>
+                        </li>
+                        <!-- <li class="nav-item">
+                            <a class="nav-link" href="#"> </a>
+                        </li> -->
+                        <li class="nav-item">
+                            <a class="nav-link v-line" href="#"> </a>
+                        </li>
+                        <li *ngIf="!isuserthere" class="nav-item">
+                            <a class="nav-link" href="/signin">Sign In</a>
+                        </li>
+                        <li *ngIf="!isuserthere" class="nav-item">
+                            <a class="nav-link" href="/Adminsignin">Admin SignIn</a>
+                        </li>
+                        <li *ngIf="!isuserthere" class="nav-item">
+                            <button type="button" class="btn btn-primary" (click)="signup()">SignUp</button>
+                        </li>
+                        <li *ngIf="isuserthere" class="nav-item">
+                            <img src="{{img}}" class="rounded-circle avatar" width="40" height="40" alt="">
+                        </li>
+                        <li *ngIf="isuserthere" class="nav-item">
+                            <a class="nav-link" href="{{link}}" >{{name}}</a>
+                        </li>
+                    </ul>
+                </div>
+                <div id="myNavbar" class="collapse">
+                    <ul class="list-group list-group-flush mt-2">
+                        <a href="#Home" class="list-group-item list-group-item-action">Home</a>
+                        <a href="#About" class="list-group-item list-group-item-action">About Us </a>
+                        <a href="#Blog" class="list-group-item list-group-item-action">Blog</a>
+                        <a href="#Contact" class="list-group-item list-group-item-action">Contact Us</a>
+                        <a *ngIf="!isuserthere" href="/signin" class="list-group-item list-group-item-action">Sign In</a>
+                        <a *ngIf="!isuserthere" href="/Adminsignin" class="list-group-item list-group-item-action">Admin SignIn</a>
+                        <a *ngIf="!isuserthere" href="/signup" class="list-group-item list-group-item-action">SignUp</a>
+                        <img *ngIf="isuserthere" src="{{img}}" alt="">
+                        <a *ngIf="isuserthere" href="{{link}}">{{name}}</a>
+                        <!-- <button type="button" class="btn btn-primary">SignUp</button> -->
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <div class="content bg-default ">
+            <div class="row ml-0 mr-0 ">
+                <div class="container card-img-overlay  text-white " style="padding-top: 40px;">
+                    <div class="vertical-center">
+                        <div class="col-sm-12 mb-3 text-center">
+                            <h1 class="text-center">Welcome To Waitlist Me</h1>
+                            <p class="text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+                            <button type="button" (click)="signup()" class="btn btn-primary pt-2 pb-2 pl-5 pr-5">Sign Up</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="about-section" id="About">
+        <div class="container">
+            <div class="row ml-0 mr-0">
+                <div class="col-sm-6">
+                    <h1>About Us</h1>
+                    <hr><br>
+                    <p class="card-text">
+                        Waitlist Me is a software business . The Waitlist Me product is SaaS, iPhone, and iPad software. Waitlist Me offers a free version.
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                    </p>
+                </div>
+                <div class="col-sm-6 d-flex justify-content-center align-self-center pt-5">
+                    <img class="img-fluid" src="../../assets/me.jpg" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="work-section">
+        <div class="container">
+            <h1 class="text-center">How It Works</h1>
+            <hr><br>
+            <div class="row ml-0 mr-0">
+                <div class="col-sm-6 mb-4">
+                    <div class="d-flex justify-content-center mb-2">
+                        <div class="circle ">
+                            <span class="material-icons">
+                                login
+                            </span>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <h3>Sign Up</h3>
+                        <p class="card-text">The app allows a potential customer to sign up to the <b>Waiting Me</b> with his/her email
+                            address. </p>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="d-flex justify-content-center mb-2">
+                        <div class="circle">
+                            <span class="material-icons">
+                                link
+                            </span>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <h3>Get Link</h3>
+                        <p class="card-text">
+                            Once he/she signed up for the <b>Waiting Me</b>, he/she will get a unique referral link
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="row ml-0 mr-0 mt-4">
+                <div class="col-sm-6">
+                    <div class="d-flex justify-content-center mb-2">
+                        <div class="circle">
+                            <span class="material-icons">
+                                share
+                            </span>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <h3>Invite Your Firends</h3>
+                        <p class="card-text">
+                            He/She can share this link to his friends.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="d-flex justify-content-center mb-2">
+                        <div class="circle">
+                            <span class="material-icons">
+                                card_giftcard
+                            </span>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <h3 class="card-title">Get Exciting Gift Coupons</h3>
+                        <p class="card-text"> Their friends sign up using his/her referral link, he/she will “move up” by 1 place in his/her
+                            position. Once a he/she reaches Position 1, he/she will receive an email with a coupon code
+                            to purchase the new product.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="blog-section" id="Blog">
+        <div class="container">
+            <div class="blog-head text-center mb-5">
+                <h1>Our Blog</h1>
+                <h5>See Our Daily News & Update</h5>
+                <hr>
+            </div>
+            <div class="blog">
+                <div class="card-deck">
+                    <div class="card">
+                      <img class="card-img-top" src="assets\1.jpg" alt="Card image cap">
+                      <div class="card-body">
+                        <h5 class="card-title text-dark">Many People Buy iPhone</h5>
+                        <p class="card-text"><small class="text-muted">by Mark Spiker <span class="material-icons">
+                            fiber_manual_record
+                            </span> Jan 10, 2021 <span class="material-icons">
+                                fiber_manual_record
+                                </span> <a style="color:#1a66ff;">News</a></small></p>
+                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+                      </div>
+                    </div>
+                    <div class="card">
+                      <img class="card-img-top" src="assets\2.jpg" alt="Card image cap">
+                      <div class="card-body">
+                        <h5 class="card-title text-dark">Many People Selling Online</h5>
+                        <p class="card-text"><small class="text-muted">by Mark Spiker <span class="material-icons">
+                            fiber_manual_record
+                            </span> Feb 18, 2020 <span class="material-icons">
+                                fiber_manual_record
+                                </span> <a style="color:#1a66ff;">News</a></small></p>
+                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+                      </div>
+                    </div>
+                    <div class="card">
+                      <img class="card-img-top" src="assets\3.jpg" alt="Card image cap">
+                      <div class="card-body">
+                        <h5 class="card-title text-dark">iPhone Luxury</h5>
+                        <p class="card-text"><small class="text-muted">by Mark Spiker <span class="material-icons">
+                            fiber_manual_record
+                            </span> Apr 18, 2021 <span class="material-icons">
+                                fiber_manual_record
+                                </span> <a style="color:#1a66ff;">News</a></small></p>
+                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+                      </div>
+                    </div>
+                </div>
+                <div class="text-center" style="margin-top: 50px;">
+                    <button class="btn btn-primary">View All Blogs</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="test-section">
+        <div class="container">
+            <div class="testimonial-head text-center">
+                <h1>Testimonials</h1>
+                <hr class="mt-0">
+            </div>
+            <div class="testimonials">
+                <div id="demo" class="carousel slide mt-4" data-ride="carousel">
+
+                    <!-- Indicators -->
+                    <ul class="carousel-indicators">
+                      <li data-target="#demo" data-slide-to="0" class="active"></li>
+                      <li data-target="#demo" data-slide-to="1"></li>
+                      <li data-target="#demo" data-slide-to="2"></li>
+                      <li data-target="#demo" data-slide-to="3"></li>
+                    </ul>
+                    
+                    <!-- The slideshow -->
+                    <div class="carousel-inner text-center">
+                      <div class="carousel-item active">
+                        <div class="container box">
+                            <img class="rounded-circle avatar mt-1" height="90px" width="90px" alt="Image placeholder" src="assets\5.jpg">
+                        <p>Bruce Roger</p>
+                        <i>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, "</i>                            
+                        </div>
+                      </div>
+                      <div class="carousel-item">
+                        <div class="container box">
+                            <img class="rounded-circle avatar mt-1" height="90px" width="90px" alt="Image placeholder" src="assets\6.jpg">
+                        <p>Bruce Roger</p>
+                        <i>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, "</i>                            
+                        </div>
+                      </div>
+                      <div class="carousel-item">
+                        <div class="container box">
+                            <img class="rounded-circle avatar mt-1" height="90px" width="90px" alt="Image placeholder" src="assets\7.jpg">
+                        <p>Bruce Roger</p>
+                        <i>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, "</i>                            
+                        </div>
+                      </div>
+                      <div class="carousel-item">
+                        <div class="container box">
+                            <img class="rounded-circle avatar mt-1" height="90px" width="90px" alt="Image placeholder" src="assets\8.jpg">
+                        <p>Bruce Roger</p>
+                        <i>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, "</i>                            
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <!-- Left and right controls -->
+                    <a class="carousel-control-prev" href="#demo" data-slide="prev">
+                        <span class="material-icons">
+                            keyboard_arrow_left
+                            </span>
+                    </a>
+                    <a class="carousel-control-next" href="#demo" data-slide="next">
+                        <span class="material-icons">
+                            keyboard_arrow_right
+                            </span>
+                    </a>
+                  </div>
+            </div>
+        </div>
+    </div>
+    <div class="contact-section" id="Contact">
+        <div class="container text-white">
+            <div class="row ml-0 mr-0">
+                <div class="col-sm-6">
+                    <h1>
+                        Contact Us
+                    </h1>
+                    <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h5>
+                </div>
+                <div class="col-sm-6 py-3">
+                    <div class="input-group mb-3 pt-3">
+                        <input type="text" class="form-control" placeholder="Email">
+                        <div class="input-group-append">
+                          <button class="btn bg-light" type="submit">submit</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-section bg-dark">
+        <div class="container text-white">
+            <div class="row ml-0 mr-0">
+                <div class="col-sm-4">
+                    <h5 class="mb-4">
+                        About
+                    </h5>
+                    <p>
+                        Lorem ipsum dolor sit amet, adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
+                    </p>
+                </div>
+                <div class="col-sm-4">
+                    <h5 class="mb-4">
+                        Navigation
+                    </h5>
+                    <ul>
+                        <li><a href="#About">AboutUs</a></li>
+                        <li><a href="#Blogs">Blogs</a></li>
+                        <!-- <li><a href="#Test">Testimonials</a></li> -->
+                        <li><a href="#Countact">Contact Us</a></li>
+                        <li><a href="/signin">SignIn</a></li>
+                        <li><a href="/Adminsignin">Admin SignIn</a></li>
+                        <li><a href="/signup">SignUp</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-4">
+                    <h5 class="mb-4">
+                        Follow Us
+                    </h5>
+                    <div class="icon">
+                        <a class="fa fa-facebook-f"></a>
+                        <a class="fa fa-twitter"></a>
+                        <a class="fa fa-instagram"></a>
+                        <a class="fa fa-linkedin"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row ml-0 mr-0 copyrights">
+            <div class="container">
+                <p>
+                    Copyright © All rights reserved <b>Waitlist Me</b>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
